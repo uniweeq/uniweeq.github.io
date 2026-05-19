@@ -118,7 +118,9 @@ function Contact() {
                     href={href}
                     className="mt-1 inline-block text-sm font-semibold text-slate-100 hover:text-white"
                     target={href.startsWith('http') ? '_blank' : undefined}
-                    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                    rel={
+                      href.startsWith('http') ? 'noopener noreferrer' : undefined
+                    }
                   >
                     {value}
                   </a>
