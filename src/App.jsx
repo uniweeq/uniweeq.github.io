@@ -14,11 +14,12 @@ function App() {
         <Navbar />
         <main className="flex-1 px-6 py-12">
           <div className="mx-auto w-full max-w-5xl">
-            <Routes>
-              <Route path="/" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/projects/kuppi" element={<Kuppi />} />
+          <Routes>
+            <Route path="/" element={<Projects />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects/kuppi" element={<Kuppi />} />
               <Route path="/projects/wellness-buddy" element={<WellnessBuddy />} />
             </Routes>
           </div>
