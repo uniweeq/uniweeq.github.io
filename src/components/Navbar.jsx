@@ -8,20 +8,20 @@ const navItems = [
 
 function Navbar() {
   return (
-    <header className="border-b border-slate-800 bg-slate-950/80">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-6">
-        <Link className="text-lg font-semibold text-white" to="/">
+    <header className="border-b-[0.5px] border-slate-200 bg-white">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-8 py-3">
+        <Link className="text-sm font-medium text-slate-900" to="/">
           Afif Bin Mohammad Taha
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium text-slate-300">
+        <nav className="flex items-center gap-6 text-xs font-medium text-slate-600">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 isActive
-                  ? 'text-white'
-                  : 'text-slate-300 hover:text-white'
+                  ? 'text-slate-900 underline underline-offset-4'
+                  : 'text-slate-600 hover:text-slate-900'
               }
               end={item.to === '/'}
             >
