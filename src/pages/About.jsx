@@ -1,7 +1,8 @@
 function About() {
-  const name = 'Afif Bin Mohammad Taha'
   const cardClassName =
     'rounded-2xl border border-slate-800 bg-slate-900/50 p-6'
+  const bio =
+    "I'm Afif, a Design and Artificial Intelligence student at SUTD with a background in Infocomm and Security from NYP. I work at the intersection of hardware and software — building things that are both functional and considered, from embedded IoT systems to real-time web dashboards. I'm drawn to projects where engineering and design thinking have to coexist, and I'm looking to grow in the creative technology space. Outside of school, I spend time on fitness and video editing — a mix that keeps me balanced and open to picking up new things wherever I find them."
 
   return (
     <section className="space-y-12">
@@ -10,7 +11,7 @@ function About() {
           About
         </p>
         <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-          {name}
+          About me
         </h1>
       </div>
 
@@ -22,22 +23,14 @@ function About() {
             </div>
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white">{name}</h2>
+            <h2 className="text-2xl font-semibold text-white">
+              Afif Bin Mohammad Taha
+            </h2>
             <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
               Design and AI · SUTD · Singapore
             </p>
           </div>
-          <p className="max-w-2xl text-lg text-slate-300">
-            I&apos;m Afif, a Design and Artificial Intelligence student at SUTD
-            with a background in Infocomm and Security from NYP. I work at the
-            intersection of hardware and software — building things that are
-            both functional and considered, from embedded IoT systems to
-            real-time web dashboards. I&apos;m drawn to projects where engineering
-            and design thinking have to coexist, and I&apos;m looking to grow in the
-            creative technology space. Outside of school, I spend time on
-            fitness and video editing — a mix that keeps me balanced and open to
-            picking up new things wherever I find them.
-          </p>
+          <p className="max-w-2xl text-lg text-slate-300">{bio}</p>
         </div>
 
         <div className="space-y-6">
