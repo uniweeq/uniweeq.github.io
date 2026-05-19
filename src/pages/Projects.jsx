@@ -104,11 +104,11 @@ function Projects() {
 
       <div className="space-y-14">
         {projects.map((project, index) => {
-          const isVisible = Boolean(visibleSections[index])
+          const isVisible = visibleSections[index]
           const isReversed = index % 2 === 1
           const hiddenTranslation = isReversed
-            ? 'translate-x-8'
-            : '-translate-x-8'
+            ? '-translate-x-8'
+            : 'translate-x-8'
           const animationClasses = isVisible
             ? 'opacity-100 translate-y-0 translate-x-0'
             : `opacity-0 translate-y-6 ${hiddenTranslation}`
