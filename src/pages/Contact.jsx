@@ -77,10 +77,9 @@ const contactItems = [
 ]
 
 const resumeUrl = '/resume.pdf'
+const cardClassName = 'rounded-3xl border border-slate-800 bg-slate-900/40 p-8'
 
 function Contact() {
-  const cardClassName = 'rounded-3xl border border-slate-800 bg-slate-900/40 p-8'
-
   return (
     <section className="space-y-10">
       <div className="space-y-4">
@@ -144,6 +143,7 @@ function Contact() {
           <a
             href={resumeUrl}
             download
+            aria-label="Download Afif Taha resume PDF"
             className="inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300"
           >
             Download Resume
