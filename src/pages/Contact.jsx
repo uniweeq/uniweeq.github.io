@@ -76,6 +76,8 @@ const contactItems = [
   },
 ]
 
+const resumeUrl = '/resume.pdf'
+
 function Contact() {
   const cardClassName = 'rounded-3xl border border-slate-800 bg-slate-900/40 p-8'
 
@@ -138,7 +140,7 @@ function Contact() {
             </p>
           </div>
           <a
-            href="/resume.pdf"
+            href={resumeUrl}
             download
             className="inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300"
           >
