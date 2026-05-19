@@ -1,4 +1,7 @@
 function About() {
+  const cardClassName =
+    'rounded-2xl border border-slate-800 bg-slate-900/50 p-6'
+
   return (
     <section className="space-y-12">
       <div className="space-y-4">
@@ -39,7 +42,7 @@ function About() {
         </div>
 
         <div className="space-y-6">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
+          <div className={cardClassName}>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
               Skills
             </p>
@@ -71,7 +74,7 @@ function About() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+          <div className={cardClassName}>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
               Education
             </p>
@@ -88,7 +91,7 @@ function About() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+      <div className={cardClassName}>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
           Testimonials
         </p>
