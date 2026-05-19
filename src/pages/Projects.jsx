@@ -206,7 +206,7 @@ function Projects() {
                   <a
                     href={project.githubUrl}
                     target="_blank"
-                    rel="noreferrer noopener"
+                    rel="noopener noreferrer"
                     className="text-indigo-300 hover:text-indigo-200"
                   >
                     GitHub →
@@ -214,7 +214,7 @@ function Projects() {
                   <a
                     href={project.trailerUrl}
                     target="_blank"
-                    rel="noreferrer noopener"
+                    rel="noopener noreferrer"
                     className="text-indigo-300 hover:text-indigo-200"
                   >
                     Trailer →
