@@ -1,3 +1,60 @@
+function MailIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </svg>
+  )
+}
+
+function GitHubIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M9 19c-4 1.5-4-2.5-6-3" />
+      <path d="M14 20v-3.5c0-1 .1-1.4-.5-2-3.5-.4-7-1.5-7-6.5a5 5 0 0 1 1.4-3.5a4.1 4.1 0 0 1 .1-3.5s1.1-.3 3.5 1.3a11.2 11.2 0 0 1 6 0c2.4-1.6 3.5-1.3 3.5-1.3a4.1 4.1 0 0 1 .1 3.5a5 5 0 0 1 1.4 3.5c0 5-3.5 6.1-7 6.5c-.6 .5-.5 1-.5 2V20" />
+    </svg>
+  )
+}
+
+function LinkedInIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M8 11v5" />
+      <path d="M8 8v.01" />
+      <path d="M12 16v-5" />
+      <path d="M16 16v-3a2 2 0 0 0-4 0" />
+    </svg>
+  )
+}
+
 const contactItems = [
   {
     label: 'Email',
@@ -90,63 +147,6 @@ function Contact() {
         </div>
       </div>
     </section>
-  )
-}
-
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m3 7 9 6 9-6" />
-    </svg>
-  )
-}
-
-function GitHubIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M9 19c-4 1.5-4-2.5-6-3" />
-      <path d="M14 20v-3.5c0-1 .1-1.4-.5-2-3.5-.4-7-1.5-7-6.5a5 5 0 0 1 1.4-3.5a4.1 4.1 0 0 1 .1-3.5s1.1-.3 3.5 1.3a11.2 11.2 0 0 1 6 0c2.4-1.6 3.5-1.3 3.5-1.3a4.1 4.1 0 0 1 .1 3.5a5 5 0 0 1 1.4 3.5c0 5-3.5 6.1-7 6.5c-.6 .5-.5 1-.5 2V20" />
-    </svg>
-  )
-}
-
-function LinkedInIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <path d="M8 11v5" />
-      <path d="M8 8v.01" />
-      <path d="M12 16v-5" />
-      <path d="M16 16v-3a2 2 0 0 0-4 0" />
-    </svg>
   )
 }
 
