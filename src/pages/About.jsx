@@ -1,4 +1,5 @@
 function About() {
+  const name = 'Afif Bin Mohammad Taha'
   const cardClassName =
     'rounded-2xl border border-slate-800 bg-slate-900/50 p-6'
 
@@ -9,7 +10,7 @@ function About() {
           About
         </p>
         <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-          Afif Bin Mohammad Taha
+          {name}
         </h1>
       </div>
 
@@ -21,9 +22,7 @@ function About() {
             </div>
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white">
-              Afif Bin Mohammad Taha
-            </h2>
+            <h2 className="text-2xl font-semibold text-white">{name}</h2>
             <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
               Design and AI · SUTD · Singapore
             </p>
