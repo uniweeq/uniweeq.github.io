@@ -7,7 +7,7 @@ const statClasses = 'rounded-2xl border border-slate-200 bg-slate-50 p-4'
 const highlightRoleClasses =
   'rounded-2xl border border-purple-200 bg-purple-50 p-4 text-slate-900'
 const roleClasses = 'rounded-2xl border border-slate-200 bg-slate-50 p-4'
-const trailerVideoId = 'VIDEO_ID'
+const trailerVideoId = 'kuppi-trailer'
 
 const problemItems = [
   'Cognitive load',
