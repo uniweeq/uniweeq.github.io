@@ -77,6 +77,7 @@ const contactItems = [
 ]
 
 const resumeUrl = '/resume.pdf'
+const resumeLabel = 'Download resume PDF'
 const cardClassName = 'rounded-3xl border border-slate-800 bg-slate-900/40 p-8'
 
 function Contact() {
@@ -101,31 +102,33 @@ function Contact() {
             </p>
           </div>
           <div className="space-y-4">
-            {contactItems.map(({ label, value, href, Icon }) => (
-              <div
-                key={label}
-                className="flex items-start gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/40 p-4"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/70 text-slate-200">
-                  <Icon className="h-5 w-5" />
+            {contactItems.map(({ label, value, href, Icon }) => {
+              const isExternalLink = href.startsWith('http')
+
+              return (
+                <div
+                  key={label}
+                  className="flex items-start gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/40 p-4"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800/70 text-slate-200">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                      {label}
+                    </p>
+                    <a
+                      href={href}
+                      className="mt-1 inline-block text-sm font-semibold text-slate-100 hover:text-white"
+                      target={isExternalLink ? '_blank' : undefined}
+                      rel={isExternalLink ? 'noopener noreferrer' : undefined}
+                    >
+                      {value}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    {label}
-                  </p>
-                  <a
-                    href={href}
-                    className="mt-1 inline-block text-sm font-semibold text-slate-100 hover:text-white"
-                    target={href.startsWith('http') ? '_blank' : undefined}
-                    rel={
-                      href.startsWith('http') ? 'noopener noreferrer' : undefined
-                    }
-                  >
-                    {value}
-                  </a>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -143,7 +146,7 @@ function Contact() {
           <a
             href={resumeUrl}
             download
-            aria-label="Download Afif Taha resume PDF"
+            aria-label={resumeLabel}
             className="inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300"
           >
             Download Resume
