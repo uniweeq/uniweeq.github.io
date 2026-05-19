@@ -60,6 +60,8 @@ const projects = [
   },
 ]
 
+const ANIMATION_TRIGGER_THRESHOLD = 0.25
+
 function Projects() {
   const [visibleSections, setVisibleSections] = useState({})
   const sectionRefs = useRef([])
@@ -69,13 +71,13 @@ function Projects() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = entry.target.dataset.index
+            const index = Number.parseInt(entry.target.dataset.index, 10)
             setVisibleSections((prev) => ({ ...prev, [index]: true }))
             observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.25 }
+      { threshold: ANIMATION_TRIGGER_THRESHOLD }
     )
 
     sectionRefs.current.forEach((section) => {
