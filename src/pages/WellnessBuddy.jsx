@@ -19,7 +19,7 @@ const roleCards = [
   {
     title: 'Team collaboration',
     description:
-      'Built as a shared team effort across hardware, firmware, and UX—no individual ownership claimed.',
+      'Built as a shared team effort across hardware, firmware, and UX. No individual ownership claimed.',
     highlight: true,
   },
 ]
@@ -169,24 +169,34 @@ function WellnessBuddy() {
       <div className={`${cardClasses} space-y-4 text-slate-900`}>
         <h2 className="text-2xl font-semibold">The build</h2>
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="flex h-48 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm font-semibold text-slate-500">
-            OpenCV detection screenshot
-          </div>
-          <div className="flex h-48 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm font-semibold text-slate-500">
-            Device photo overview
-          </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {['Device photo 1', 'Device photo 2', 'Device photo 3'].map(
-            (label) => (
-              <div
-                key={label}
-                className="flex h-36 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm font-semibold text-slate-500"
-              >
-                {label}
-              </div>
-            )
-          )}
+          <figure className="space-y-2">
+            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
+              <img
+                alt="OpenCV face detection · posture monitoring"
+                className="block h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
+                src="/images/wellness/wellness-cv.png"
+              />
+            </div>
+            <figcaption className="text-xs font-medium text-slate-500">
+              OpenCV face detection · posture monitoring
+            </figcaption>
+          </figure>
+          <figure className="space-y-2">
+            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
+              <img
+                alt="Wellness Buddy prototype"
+                className="block h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
+                src="/images/wellness/wellness-device.jpg"
+              />
+            </div>
+            <figcaption className="text-xs font-medium text-slate-500">
+              Wellness Buddy prototype
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
