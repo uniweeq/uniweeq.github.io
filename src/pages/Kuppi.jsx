@@ -248,7 +248,7 @@ function Kuppi() {
               <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
                 <img
                   alt={item.label}
-                  className="block h-full w-full object-contain"
+                  className="block h-full w-full object-cover"
                   decoding="async"
                   loading="lazy"
                   src={item.src}
