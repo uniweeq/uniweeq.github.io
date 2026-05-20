@@ -76,7 +76,7 @@ const contactItems = [
   },
 ]
 
-const resumeUrl = '/resume.pdf'
+const resumeUrl = '/resume/Afif_Resume_2026.pdf'
 const resumeLabel = 'Download resume PDF'
 const cardClassName = 'rounded-3xl border border-slate-800 bg-slate-900/40 p-8'
 
