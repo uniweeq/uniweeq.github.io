@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Github, Play, ArrowRight } from 'lucide-react'
 
 const projects = [
   {
@@ -8,10 +9,10 @@ const projects = [
     tagline: 'Clean rooms, clear minds',
     description:
       'NFC-driven handheld device guiding hotel housekeeping staff through 6 cleaning zones, with a real-time supervisor dashboard that updates live as each zone is completed.',
-    stats: [
-      { value: '6', label: 'Zones tracked' },
-      { value: '2', label: 'FreeRTOS cores' },
-      { value: 'Live', label: 'SSE dashboard' },
+    actionCards: [
+      { icon: Github, label: 'GitHub', href: 'https://github.com/uniweeq', highlight: false },
+      { icon: Play, label: 'Trailer', href: 'https://youtu.be/kuppi-trailer', highlight: false },
+      { icon: ArrowRight, label: 'Case Study', to: '/projects/kuppi', highlight: true },
     ],
     contributions: [
       'Firmware (C++ / FreeRTOS)',
@@ -19,9 +20,6 @@ const projects = [
       'Flask and Supabase backend',
     ],
     techStack: ['C++', 'Python', 'Flask', 'Arduino', 'FreeRTOS', 'Supabase', 'JavaScript'],
-    githubUrl: 'https://github.com/uniweeq/kuppi',
-    trailerUrl: 'https://youtu.be/kuppi-trailer',
-    caseStudyUrl: '/projects/kuppi',
     theme: { bg: '#EEEDFE', text: '#3C3489' },
     imageUrl: '/images/kuppi/kuppi-hero.jpg',
   },
@@ -31,19 +29,15 @@ const projects = [
     tagline: 'Productivity powered by personality',
     description:
       'Desk companion device using OpenCV face detection to monitor posture, delivering nudges through four animated personality-driven characters built for SUTD staff working long desk hours.',
-    stats: [
-      { value: '4', label: 'Personalities' },
-      { value: 'Haar', label: 'Face detection' },
-      { value: 'Live', label: 'Posture alerts' },
+    actionCards: [
+      { icon: Play, label: 'Trailer', href: 'https://youtu.be/-uXnNBSNkIs', highlight: false },
+      { icon: ArrowRight, label: 'Case Study', to: '/projects/wellness-buddy', highlight: true },
     ],
     contributions: [
       'Full team collaboration',
       'Ideation to prototype',
     ],
     techStack: ['Python', 'OpenCV', 'C++', 'Arduino', 'JavaScript'],
-    githubUrl: null,
-    trailerUrl: 'https://youtu.be/wellness-buddy-trailer',
-    caseStudyUrl: '/projects/wellness-buddy',
     theme: { bg: '#FAEEDA', text: '#633806' },
     imageUrl: '/images/wellness/wellness-device.jpg',
   },
@@ -134,20 +128,34 @@ function Projects() {
                 </p>
                 <p className="mt-4 text-slate-300">{project.description}</p>
 
-                <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                  {project.stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4"
-                    >
-                      <p className="text-2xl font-semibold text-white">
-                        {stat.value}
-                      </p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-400">
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.actionCards.map((card) => {
+                    const Icon = card.icon
+                    const shared =
+                      'flex flex-col items-center gap-2 rounded-2xl border px-5 py-4 text-xs font-semibold transition-all duration-200 hover:-translate-y-1'
+                    const normal =
+                      'border-slate-800 bg-slate-900/50 text-slate-300 hover:bg-slate-800/70 hover:text-white'
+                    const highlighted =
+                      'border-indigo-500 bg-indigo-600 text-white hover:bg-indigo-500'
+                    const className = `${shared} ${card.highlight ? highlighted : normal}`
+                    return card.to ? (
+                      <Link key={card.label} to={card.to} className={className}>
+                        <Icon size={18} />
+                        {card.label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={card.label}
+                        href={card.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={className}
+                      >
+                        <Icon size={18} />
+                        {card.label}
+                      </a>
+                    )
+                  })}
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-2 rounded-full border border-slate-800 bg-slate-900/40 px-4 py-2">
@@ -179,32 +187,6 @@ function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-semibold">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-300 hover:text-indigo-200"
-                    >
-                      GitHub →
-                    </a>
-                  )}
-                  <a
-                    href={project.trailerUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-300 hover:text-indigo-200"
-                  >
-                    Trailer →
-                  </a>
-                  <Link
-                    to={project.caseStudyUrl}
-                    className="text-indigo-300 hover:text-indigo-200"
-                  >
-                    Case study →
-                  </Link>
-                </div>
               </div>
             </div>
           )
