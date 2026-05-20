@@ -107,15 +107,15 @@ function Projects() {
               }}
               className={`grid items-center gap-10 rounded-3xl border border-slate-800/70 bg-slate-900/30 p-8 transition-all duration-700 ease-out lg:grid-cols-2 ${animationClasses}`}
             >
-              <div className={`${isReversed ? 'lg:order-2' : ''} h-full min-h-64`}>
+              <div className={`${isReversed ? 'lg:order-2' : ''}`} style={{ minHeight: '16rem' }}>
                 <video
                   src={project.videoSrc}
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="h-full w-full rounded-2xl object-cover shadow-lg"
-                  style={{ minHeight: '16rem' }}
+                  className="w-full rounded-2xl object-cover shadow-lg"
+                  style={{ height: '100%', minHeight: '16rem', display: 'block' }}
                 >
                   Your browser does not support the video tag.
                 </video>
