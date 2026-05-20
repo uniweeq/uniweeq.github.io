@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Lightbox from '../components/Lightbox'
 
 const buildImages = [
-  { src: '/images/wellness/wellness-cv.png', caption: 'OpenCV face detection · posture monitoring' },
+  { src: '/images/wellness/wellness-cv.jpg', caption: 'OpenCV face detection · posture monitoring' },
   { src: '/images/wellness/wellness-device.jpg', caption: 'Wellness Buddy prototype' },
 ]
 

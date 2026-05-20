@@ -5,8 +5,8 @@ import Lightbox from '../components/Lightbox'
 const buildImages = [
   { src: '/images/kuppi/kuppi-hero.jpg', caption: 'KUPPI in hand' },
   { src: '/images/kuppi/kuppi-inuse.jpg', caption: 'Device screen on' },
-  { src: '/images/kuppi/kuppi-dashboard.png', caption: 'Supervisor dashboard · real-time SSE' },
-  { src: '/images/kuppi/kuppi-device.gif', caption: 'Device UI · NFC zone interaction' },
+  { src: '/images/kuppi/kuppi-device.gif', caption: 'Supervisor dashboard · real-time SSE' },
+  { src: '/images/kuppi/kuppi-dashboard.jpg', caption: 'Device UI · NFC zone interaction' },
   { src: '/images/kuppi/kuppi-cad.jpg', caption: 'Casing engineering drawing — by teammate' },
 ]
 
