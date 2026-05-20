@@ -11,7 +11,7 @@ const projects = [
       'NFC-driven handheld device guiding hotel housekeeping staff through 6 cleaning zones, with a real-time supervisor dashboard that updates live as each zone is completed.',
     actionCards: [
       { icon: GitBranch, label: 'GitHub', href: 'https://github.com/uniweeq', highlight: false },
-      { icon: Play, label: 'Trailer', href: 'https://youtu.be/kuppi-trailer', highlight: false },
+      { icon: Play, label: 'Trailer', href: 'https://youtu.be/g1X3Cxpo-Yk?si=IiN1o61aqqZWlFgW', highlight: false },
       { icon: ArrowRight, label: 'Case Study', to: '/projects/kuppi', highlight: true },
     ],
     contributions: [

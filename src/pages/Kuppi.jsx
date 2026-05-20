@@ -7,7 +7,7 @@ const statClasses = 'rounded-2xl border border-slate-200 bg-slate-50 p-4'
 const highlightRoleClasses =
   'rounded-2xl border border-purple-200 bg-purple-50 p-4 text-slate-900'
 const roleClasses = 'rounded-2xl border border-slate-200 bg-slate-50 p-4'
-const trailerVideoId = 'kuppi-trailer'
+const trailerVideoId = 'g1X3Cxpo-Yk?si=zPKQIupK4Ktp944B'
 
 const problemItems = [
   'Cognitive load',
@@ -248,7 +248,7 @@ function Kuppi() {
               <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
                 <img
                   alt={item.label}
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full object-contain"
                   decoding="async"
                   loading="lazy"
                   src={item.src}
