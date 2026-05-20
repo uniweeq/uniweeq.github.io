@@ -51,19 +51,19 @@ const flowSteps = [
 const techStack = [
   {
     title: 'Firmware',
-    items: ['C++', 'FreeRTOS', 'ESP-IDF'],
+    items: ['C++', 'FreeRTOS', 'Arduino IDE'],
   },
   {
     title: 'Backend',
-    items: ['Flask', 'Supabase', 'SSE'],
+    items: ['Flask', 'Supabase', 'SSE', 'PostgreSQL'],
   },
   {
     title: 'Dashboard',
-    items: ['React', 'Tailwind CSS', 'Realtime charts'],
+    items: ['HTML', 'CSS', 'JavaScript', 'Jinja2'],
   },
   {
     title: 'Hardware',
-    items: ['ESP32', 'NFC', 'TFT', 'LiPo'],
+    items: ['ESP32', 'PN532 NFC', 'ST7796 TFT', 'LiPo'],
   },
 ]
 
