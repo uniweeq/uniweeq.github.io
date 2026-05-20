@@ -206,7 +206,7 @@ function Kuppi() {
                 className="block h-full w-full object-cover"
                 decoding="async"
                 loading="lazy"
-                src="/images/kuppi/kuppi-dashboard.png"
+                src="/images/kuppi/kuppi-dashboard.jpg"
               />
             </div>
             <figcaption className="text-xs font-medium text-slate-500">
