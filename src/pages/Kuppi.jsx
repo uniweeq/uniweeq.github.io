@@ -196,70 +196,71 @@ function Kuppi() {
         </div>
       </div>
 
-	      <div className={`${cardClasses} space-y-4 text-slate-900`}>
-	        <h2 className="text-2xl font-semibold">The build</h2>
-	        <div className="grid gap-4 md:grid-cols-2">
-	          <figure className="space-y-2">
-	            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-	              <img
-	                alt="Device UI · NFC zone interaction"
-	                className="block h-full w-full object-cover"
-	                decoding="async"
-	                loading="lazy"
-	                src="/images/kuppi/kuppi-device.gif"
-	              />
-	            </div>
-	            <figcaption className="text-xs font-medium text-slate-500">
-	              Device UI · NFC zone interaction
-	            </figcaption>
-	          </figure>
-	          <figure className="space-y-2">
-	            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-	              <img
-	                alt="Supervisor dashboard · real-time SSE"
-	                className="block h-full w-full object-cover"
-	                decoding="async"
-	                loading="lazy"
-	                src="/images/kuppi/kuppi-dashboard.png"
-	              />
-	            </div>
-	            <figcaption className="text-xs font-medium text-slate-500">
-	              Supervisor dashboard · real-time SSE
-	            </figcaption>
-	          </figure>
-	        </div>
-	        <div className="grid gap-4 sm:grid-cols-3">
-	          {[
-	            {
-	              src: '/images/kuppi/kuppi-hero.jpg',
-	              label: 'KUPPI in hand',
-	            },
-	            {
-	              src: '/images/kuppi/kuppi-inuse.jpg',
-	              label: 'Device screen on',
-	            },
-	            {
-	              src: '/images/kuppi/kuppi-cad.jpg',
-	              label: 'Casing engineering drawing — by teammate',
-	            },
-	          ].map((item) => (
-	            <figure key={item.src} className="space-y-2">
-	              <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
-	                <img
-	                  alt={item.label}
-	                  className="block h-full w-full object-cover"
-	                  decoding="async"
-	                  loading="lazy"
-	                  src={item.src}
-	                />
-	              </div>
-	              <figcaption className="text-xs font-medium text-slate-500">
-	                {item.label}
-	              </figcaption>
-	            </figure>
-	          ))}
-	        </div>
-	      </div>
+      <div className={`${cardClasses} space-y-4 text-slate-900`}>
+        <h2 className="text-2xl font-semibold">The build</h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          <figure className="space-y-2">
+            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
+              <img
+                alt="Device UI · NFC zone interaction"
+                className="block h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
+                src="/images/kuppi/kuppi-dashboard.png"
+              />
+            </div>
+            <figcaption className="text-xs font-medium text-slate-500">
+              Device UI · NFC zone interaction
+            </figcaption>
+          </figure>
+          <figure className="space-y-2">
+            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
+              <img
+                alt="Supervisor dashboard · real-time SSE"
+                className="block h-full w-full object-cover"
+                decoding="async"
+                loading="lazy"
+                // src="/images/kuppi/kuppi-dashboard.png"
+                src="/images/kuppi/kuppi-device.gif"
+              />
+            </div>
+            <figcaption className="text-xs font-medium text-slate-500">
+              Supervisor dashboard · real-time SSE
+            </figcaption>
+          </figure>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              src: '/images/kuppi/kuppi-hero.jpg',
+              label: 'KUPPI in hand',
+            },
+            {
+              src: '/images/kuppi/kuppi-inuse.jpg',
+              label: 'Device screen on',
+            },
+            {
+              src: '/images/kuppi/kuppi-cad.jpg',
+              label: 'Casing engineering drawing — by teammate',
+            },
+          ].map((item) => (
+            <figure key={item.src} className="space-y-2">
+              <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
+                <img
+                  alt={item.label}
+                  className="block h-full w-full object-cover"
+                  decoding="async"
+                  loading="lazy"
+                  src={item.src}
+                />
+              </div>
+              <figcaption className="text-xs font-medium text-slate-500">
+                {item.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
 
       <div className={`${cardClasses} space-y-4 text-slate-900`}>
         <h2 className="text-2xl font-semibold">What I learned</h2>
