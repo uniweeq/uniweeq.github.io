@@ -21,7 +21,7 @@ const projects = [
     ],
     techStack: ['C++', 'Python', 'Flask', 'Arduino', 'FreeRTOS', 'Supabase', 'JavaScript'],
     theme: { bg: '#EEEDFE', text: '#3C3489' },
-    imageUrl: '/images/kuppi/kuppi-hero.jpg',
+    videoSrc: '/videos/kuppi-demo.mp4',
   },
   {
     number: '02',
@@ -39,7 +39,7 @@ const projects = [
     ],
     techStack: ['Python', 'OpenCV', 'C++', 'Arduino', 'JavaScript'],
     theme: { bg: '#FAEEDA', text: '#633806' },
-    imageUrl: '/images/wellness/wellness-device.jpg',
+    videoSrc: '/videos/wellness-demo.mp4',
   },
 ]
 
@@ -108,12 +108,17 @@ function Projects() {
               className={`grid items-center gap-10 rounded-3xl border border-slate-800/70 bg-slate-900/30 p-8 transition-all duration-700 ease-out lg:grid-cols-2 ${animationClasses}`}
             >
               <div className={`${isReversed ? 'lg:order-2' : ''} h-full min-h-64`}>
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
+                <video
+                  src={project.videoSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="h-full w-full rounded-2xl object-cover shadow-lg"
                   style={{ minHeight: '16rem' }}
-                />
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               <div className={isReversed ? 'lg:order-1' : ''}>
