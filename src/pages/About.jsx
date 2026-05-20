@@ -17,10 +17,12 @@ function About() {
 
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="space-y-6">
-          <div className="aspect-[3/4] w-full max-w-sm rounded-3xl bg-slate-800/70">
-            <div className="flex h-full items-center justify-center text-xs uppercase tracking-[0.3em] text-slate-500">
-              Photo
-            </div>
+          <div className="aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl bg-slate-800/70">
+            <img
+              src="/images/about/afif-photo.jpg"
+              alt="Afif Bin Mohammad Taha"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold text-white">
