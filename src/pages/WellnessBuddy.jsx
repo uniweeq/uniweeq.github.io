@@ -176,7 +176,7 @@ function WellnessBuddy() {
                 className="block h-full w-full object-cover"
                 decoding="async"
                 loading="lazy"
-                src="/images/wellness/wellness-cv.png"
+                src="/images/wellness/wellness-cv.jpg"
               />
             </div>
             <figcaption className="text-xs font-medium text-slate-500">
