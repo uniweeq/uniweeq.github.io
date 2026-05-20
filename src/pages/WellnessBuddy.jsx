@@ -1,4 +1,11 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Lightbox from '../components/Lightbox'
+
+const buildImages = [
+  { src: '/images/wellness/wellness-cv.png', caption: 'OpenCV face detection · posture monitoring' },
+  { src: '/images/wellness/wellness-device.jpg', caption: 'Wellness Buddy prototype' },
+]
 
 const cardClasses = 'rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
 const badgeClasses =
@@ -47,6 +54,8 @@ const techStack = [
 ]
 
 function WellnessBuddy() {
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+
   return (
     <section className="space-y-8">
       <Link
@@ -169,36 +178,36 @@ function WellnessBuddy() {
       <div className={`${cardClasses} space-y-4 text-slate-900`}>
         <h2 className="text-2xl font-semibold">The build</h2>
         <div className="grid gap-4 md:grid-cols-2">
-          <figure className="space-y-2">
-            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-              <img
-                alt="OpenCV face detection · posture monitoring"
-                className="block h-full w-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="/images/wellness/wellness-cv.jpg"
-              />
-            </div>
-            <figcaption className="text-xs font-medium text-slate-500">
-              OpenCV face detection · posture monitoring
-            </figcaption>
-          </figure>
-          <figure className="space-y-2">
-            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-              <img
-                alt="Wellness Buddy prototype"
-                className="block h-full w-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="/images/wellness/wellness-device.jpg"
-              />
-            </div>
-            <figcaption className="text-xs font-medium text-slate-500">
-              Wellness Buddy prototype
-            </figcaption>
-          </figure>
+          {buildImages.map((img, i) => (
+            <figure key={img.src} className="space-y-2">
+              <button
+                type="button"
+                className="block h-48 w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-100"
+                onClick={() => setLightboxIndex(i)}
+              >
+                <img
+                  alt={img.caption}
+                  className="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+                  decoding="async"
+                  loading="lazy"
+                  src={img.src}
+                />
+              </button>
+              <figcaption className="text-xs font-medium text-slate-500">
+                {img.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={buildImages}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </section>
   )
 }

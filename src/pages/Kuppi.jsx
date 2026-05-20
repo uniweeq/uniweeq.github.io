@@ -1,4 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Lightbox from '../components/Lightbox'
+
+const buildImages = [
+  { src: '/images/kuppi/kuppi-hero.jpg', caption: 'KUPPI in hand' },
+  { src: '/images/kuppi/kuppi-inuse.jpg', caption: 'Device screen on' },
+  { src: '/images/kuppi/kuppi-dashboard.png', caption: 'Supervisor dashboard · real-time SSE' },
+  { src: '/images/kuppi/kuppi-device.gif', caption: 'Device UI · NFC zone interaction' },
+  { src: '/images/kuppi/kuppi-cad.jpg', caption: 'Casing engineering drawing — by teammate' },
+]
 
 const cardClasses = 'rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
 const badgeClasses =
@@ -74,6 +84,8 @@ const lessons = [
 ]
 
 function Kuppi() {
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+
   return (
     <section className="space-y-8">
       <Link
@@ -199,63 +211,45 @@ function Kuppi() {
       <div className={`${cardClasses} space-y-4 text-slate-900`}>
         <h2 className="text-2xl font-semibold">The build</h2>
         <div className="grid gap-4 md:grid-cols-2">
-          <figure className="space-y-2">
-            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-              <img
-                alt="Device UI · NFC zone interaction"
-                className="block h-full w-full object-contain"
-                decoding="async"
-                loading="lazy"
-                src="/images/kuppi/kuppi-dashboard.jpg"
-              />
-            </div>
-            <figcaption className="text-xs font-medium text-slate-500">
-              Device UI · NFC zone interaction
-            </figcaption>
-          </figure>
-          <figure className="space-y-2">
-            <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
-              <img
-                alt="Supervisor dashboard · real-time SSE"
-                className="block h-full w-full object-contain"
-                decoding="async"
-                loading="lazy"
-                // src="/images/kuppi/kuppi-dashboard.png"
-                src="/images/kuppi/kuppi-device.gif"
-              />
-            </div>
-            <figcaption className="text-xs font-medium text-slate-500">
-              Supervisor dashboard · real-time SSE
-            </figcaption>
-          </figure>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            {
-              src: '/images/kuppi/kuppi-hero.jpg',
-              label: 'KUPPI in hand',
-            },
-            {
-              src: '/images/kuppi/kuppi-inuse.jpg',
-              label: 'Device screen on',
-            },
-            {
-              src: '/images/kuppi/kuppi-cad.jpg',
-              label: 'Casing engineering drawing — by teammate',
-            },
-          ].map((item) => (
-            <figure key={item.src} className="space-y-2">
-              <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
+          {buildImages.slice(0, 2).map((img, i) => (
+            <figure key={img.src} className="space-y-2">
+              <button
+                type="button"
+                className="block h-48 w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-100"
+                onClick={() => setLightboxIndex(i)}
+              >
                 <img
-                  alt={item.label}
-                  className="block h-full w-full object-contain"
+                  alt={img.caption}
+                  className="h-full w-full object-contain transition-transform duration-200 hover:scale-105"
                   decoding="async"
                   loading="lazy"
-                  src={item.src}
+                  src={img.src}
                 />
-              </div>
+              </button>
               <figcaption className="text-xs font-medium text-slate-500">
-                {item.label}
+                {img.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {buildImages.slice(2).map((img, i) => (
+            <figure key={img.src} className="space-y-2">
+              <button
+                type="button"
+                className="block h-36 w-full cursor-zoom-in overflow-hidden rounded-2xl bg-slate-100"
+                onClick={() => setLightboxIndex(i + 2)}
+              >
+                <img
+                  alt={img.caption}
+                  className="h-full w-full object-contain transition-transform duration-200 hover:scale-105"
+                  decoding="async"
+                  loading="lazy"
+                  src={img.src}
+                />
+              </button>
+              <figcaption className="text-xs font-medium text-slate-500">
+                {img.caption}
               </figcaption>
             </figure>
           ))}
@@ -280,6 +274,14 @@ function Kuppi() {
         Developed with AI-assisted tooling. Architecture and system decisions
         driven by the team.
       </p>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={buildImages}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </section>
   )
 }
