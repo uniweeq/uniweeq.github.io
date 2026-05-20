@@ -2,7 +2,7 @@ function About() {
   const cardClassName =
     'rounded-2xl border border-slate-800 bg-slate-900/50 p-6'
   const bio =
-    "I'm Afif, a Design and Artificial Intelligence student at SUTD with a background in Infocomm and Security from NYP. I work at the intersection of hardware and software — building things that are both functional and considered, from embedded IoT systems to real-time web dashboards. I'm drawn to projects where engineering and design thinking have to coexist, and I'm looking to grow in the creative technology space. Outside of school, I spend time on fitness and video editing — a mix that keeps me balanced and open to picking up new things wherever I find them."
+    "I'm Afif, a Design and Artificial Intelligence student at SUTD with a background in Infocomm and Security from NYP. I work at the intersection of hardware and software , building things that are both functional and considered, from embedded IoT systems to real-time web dashboards. I'm drawn to projects where engineering and design thinking have to coexist, and I'm looking to grow in the creative technology space. Outside of school, I spend time on fitness and video editing , a mix that keeps me balanced and open to picking up new things wherever I find them."
 
   return (
     <section className="space-y-12">
