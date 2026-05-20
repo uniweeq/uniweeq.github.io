@@ -7,56 +7,45 @@ const projects = [
     title: 'KUPPI',
     tagline: 'Clean rooms, clear minds',
     description:
-      'KUPPI is a holistic cleanroom companion that connects IoT air-quality sensors with a calming mobile experience. It turns lab data into actionable nudges, helping teams sustain compliance without sacrificing focus.',
+      'NFC-driven handheld device guiding hotel housekeeping staff through 6 cleaning zones, with a real-time supervisor dashboard that updates live as each zone is completed.',
     stats: [
-      { value: '18', label: 'IoT nodes installed' },
-      { value: '4', label: 'Cleanroom zones' },
-      { value: '92%', label: 'Alert response rate' },
+      { value: '6', label: 'Zones tracked' },
+      { value: '2', label: 'FreeRTOS cores' },
+      { value: 'Live', label: 'SSE dashboard' },
     ],
     contributions: [
-      'Product strategy',
-      'UX flows',
-      'Hardware prototyping',
-      'Visual system',
+      'Firmware (C++ / FreeRTOS)',
+      'Supervisor dashboard',
+      'Flask and Supabase backend',
     ],
-    techStack: ['ESP32', 'TensorFlow Lite', 'React Native', 'Figma'],
+    techStack: ['C++', 'Python', 'Flask', 'Arduino', 'FreeRTOS', 'Supabase', 'JavaScript'],
     githubUrl: 'https://github.com/uniweeq/kuppi',
     trailerUrl: 'https://youtu.be/kuppi-trailer',
     caseStudyUrl: '/projects/kuppi',
     theme: { bg: '#EEEDFE', text: '#3C3489' },
-    visual: {
-      kicker: 'Air-quality hub',
-      headline: 'Live lab health scores',
-      detail: 'Real-time particle tracking',
-    },
+    imageUrl: '/images/kuppi/kuppi-hero.jpg',
   },
   {
     number: '02',
     title: 'Wellness Buddy',
     tagline: 'Productivity powered by personality',
     description:
-      'Wellness Buddy blends personality science with habit tracking to build routines that stick. The experience adapts tone, check-ins, and coaching prompts to each user archetype.',
+      'Desk companion device using OpenCV face detection to monitor posture, delivering nudges through four animated personality-driven characters built for SUTD staff working long desk hours.',
     stats: [
-      { value: '12', label: 'Personality profiles' },
-      { value: '5', label: 'Daily ritual flows' },
-      { value: '94%', label: 'Weekly retention' },
+      { value: '4', label: 'Personalities' },
+      { value: 'Haar', label: 'Face detection' },
+      { value: 'Live', label: 'Posture alerts' },
     ],
     contributions: [
-      'Research synthesis',
-      'Interaction design',
-      'Content strategy',
-      'Prototype testing',
+      'Full team collaboration',
+      'Ideation to prototype',
     ],
-    techStack: ['React', 'Framer Motion', 'Notion API', 'Illustrator'],
-    githubUrl: 'https://github.com/uniweeq/wellness-buddy',
+    techStack: ['Python', 'OpenCV', 'C++', 'Arduino', 'JavaScript'],
+    githubUrl: null,
     trailerUrl: 'https://youtu.be/wellness-buddy-trailer',
     caseStudyUrl: '/projects/wellness-buddy',
     theme: { bg: '#FAEEDA', text: '#633806' },
-    visual: {
-      kicker: 'Mood-aware guidance',
-      headline: 'Personalized daily prompts',
-      detail: 'Adaptive coaching flows',
-    },
+    imageUrl: '/images/wellness/wellness-device.jpg',
   },
 ]
 
@@ -124,27 +113,13 @@ function Projects() {
               }}
               className={`grid items-center gap-10 rounded-3xl border border-slate-800/70 bg-slate-900/30 p-8 transition-all duration-700 ease-out lg:grid-cols-2 ${animationClasses}`}
             >
-              <div className={isReversed ? 'lg:order-2' : ''}>
-                <div
-                  className="relative overflow-hidden rounded-2xl p-8 shadow-lg"
-                  style={{
-                    backgroundColor: project.theme.bg,
-                    color: project.theme.text,
-                  }}
-                >
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-                    {project.visual.kicker}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-semibold">
-                    {project.visual.headline}
-                  </h3>
-                  <p className="mt-3 text-sm opacity-80">
-                    {project.visual.detail}
-                  </p>
-                  <div className="mt-8 rounded-xl bg-white/70 px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em]">
-                    {project.title} system map
-                  </div>
-                </div>
+              <div className={`${isReversed ? 'lg:order-2' : ''} h-full min-h-64`}>
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="h-full w-full rounded-2xl object-cover shadow-lg"
+                  style={{ minHeight: '16rem' }}
+                />
               </div>
 
               <div className={isReversed ? 'lg:order-1' : ''}>
@@ -205,14 +180,16 @@ function Projects() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-semibold">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-300 hover:text-indigo-200"
-                  >
-                    GitHub →
-                  </a>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-300 hover:text-indigo-200"
+                    >
+                      GitHub →
+                    </a>
+                  )}
                   <a
                     href={project.trailerUrl}
                     target="_blank"
