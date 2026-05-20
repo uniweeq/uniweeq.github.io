@@ -203,7 +203,7 @@ function Kuppi() {
             <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
               <img
                 alt="Device UI · NFC zone interaction"
-                className="block h-full w-full object-cover"
+                className="block h-full w-full object-contain"
                 decoding="async"
                 loading="lazy"
                 src="/images/kuppi/kuppi-dashboard.jpg"
@@ -217,7 +217,7 @@ function Kuppi() {
             <div className="h-48 overflow-hidden rounded-2xl bg-slate-100">
               <img
                 alt="Supervisor dashboard · real-time SSE"
-                className="block h-full w-full object-cover"
+                className="block h-full w-full object-contain"
                 decoding="async"
                 loading="lazy"
                 // src="/images/kuppi/kuppi-dashboard.png"
@@ -248,7 +248,7 @@ function Kuppi() {
               <div className="h-36 overflow-hidden rounded-2xl bg-slate-100">
                 <img
                   alt={item.label}
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full object-contain"
                   decoding="async"
                   loading="lazy"
                   src={item.src}
