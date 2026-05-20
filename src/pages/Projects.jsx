@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Github, Play, ArrowRight } from 'lucide-react'
+import { GitBranch, Play, ArrowRight } from 'lucide-react'
 
 const projects = [
   {
@@ -10,7 +10,7 @@ const projects = [
     description:
       'NFC-driven handheld device guiding hotel housekeeping staff through 6 cleaning zones, with a real-time supervisor dashboard that updates live as each zone is completed.',
     actionCards: [
-      { icon: Github, label: 'GitHub', href: 'https://github.com/uniweeq', highlight: false },
+      { icon: GitBranch, label: 'GitHub', href: 'https://github.com/uniweeq', highlight: false },
       { icon: Play, label: 'Trailer', href: 'https://youtu.be/kuppi-trailer', highlight: false },
       { icon: ArrowRight, label: 'Case Study', to: '/projects/kuppi', highlight: true },
     ],
